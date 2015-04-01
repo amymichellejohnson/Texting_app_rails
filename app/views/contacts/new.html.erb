@@ -1,0 +1,9 @@
+<h1>Add Contact</h1>
+
+<%= form_for @contact do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :telephone %>
+  <%= f.text_field :telephone %>
+  <%= f.submit class: "btn btn-primary btn-sm"%>
+<% end %>

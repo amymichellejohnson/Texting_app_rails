@@ -7,7 +7,7 @@
   </ul>
 <% end %>
 
-
+<h1> New Message </h1>
 <%= form_for @message do |f| %>
   <%= f.label :to %>
   <%= f.text_field :to %>
@@ -15,5 +15,5 @@
   <%= f.text_field :from %>
   <%= f.label :body %>
   <%= f.text_field :body %>
-  <%= f.submit %>
+  <%= f.submit class: "btn btn-primary btn-sm" %>
 <% end %>

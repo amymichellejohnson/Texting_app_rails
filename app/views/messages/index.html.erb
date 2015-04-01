@@ -1,8 +1,11 @@
-<h1>Messages sent</h1>
-<ul>
-  <% @messages.each do |message| %>
-    <li><%= message.id %></li>
-  <% end %>
-</ul>
+<div class ="col-md-3 col-md-offset-5">
+  <h1 class="header">Messages sent</h1>
+  <ul>
+    <% @messages.each do |message| %>
+      <li><%= message.id %></li>
+    <% end %>
+  </ul>
 
-<%= link_to "New Message", new_message_path %>
+  <%= link_to "New Message", new_message_path %>
+  <%= link_to "Addressbook", contacts_path %>
+</div>
