@@ -1,0 +1,8 @@
+<h1>Messages sent</h1>
+<ul>
+  <% @messages.each do |message| %>
+    <li><%= message.id %></li>
+  <% end %>
+</ul>
+
+<%= link_to "New Message", new_message_path %>
