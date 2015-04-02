@@ -1,8 +1,8 @@
-<div class ="col-md-3 col-md-offset-5">
+<div class ="col-md-4 col-md-offset-5">
   <h1 class="header">Messages sent</h1>
   <ul>
     <% @messages.each do |message| %>
-      <li><%= message.id %></li>
+      <li>To: <%= message.to%>, From: <%=message.from %>, Message: <%=message.body %></li>
     <% end %>
   </ul>
 
