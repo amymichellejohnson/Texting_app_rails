@@ -2,3 +2,7 @@
 button, input, optgroup, select, textarea {
   color: #404040;
 }
+
+.form_names {
+  padding-right: 15px;
+}

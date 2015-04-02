@@ -9,29 +9,22 @@
 
 
 
+<br>
+<br>
+<br>
+
 <h1> New Message </h1>
-  <%= form_for @message do |f| %>
-  <select name="message[to]" id="message_to">
-  <% @contacts.each do |contact| %>
-  <option value= "<%= contact.telephone %>"> <%= contact.name %> </option>
+<%= form_for @message do |f| %>
+To: &nbsp;
+  <% @contacts.order(name: :asc).each do |contact| %>
+    <input type="checkbox" value="<%= contact.telephone %>" name="contact_telephones[]" id="message_to">
+    <%= f.label contact.name, class: "form_names" %>
   <% end %>
-  </select>
+  <br>
+  <br>
   <%= f.label :from %>
   <%= f.text_field :from %>
   <%= f.label :body %>
   <%= f.text_field :body %>
   <%= f.submit class: "btn btn-primary btn-sm" %>
-<% end %>
-
-
-<h1> New Group Message </h1>
-<%= form_for @message do |f| %>
-<% @contacts.each do |contact| %>
-<input type="checkbox" value="<%= contact.telephone %>" name="message[to]" id="message_to">
-<% end %>
-<%= f.label :from %>
-<%= f.text_field :from %>
-<%= f.label :body %>
-<%= f.text_field :body %>
-<%= f.submit class: "btn btn-primary btn-sm" %>
 <% end %>

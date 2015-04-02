@@ -38,6 +38,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'rest-client'
+  gem 'pry'
+
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
@@ -53,7 +55,6 @@ end
 group :test do
   gem 'vcr'
   gem 'webmock'
-  gem 'pry'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
 end
