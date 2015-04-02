@@ -5,10 +5,16 @@ describe Message, :vcr => true do
     message = Message.new(:body => 'hi', :to => '1111111', :from => '5039256735')
     expect(message.save).to eq(false)
   end
-  
+
   it "adds and error if the number is invalid" do
     message = Message.new(:body => 'hi', :to => '1111111', :from => '5039256735')
     message.save
     expect(message.errors.messages[:base]).to eq ["The 'To' number 1111111 is not a valid phone number."]
   end
+
+  it { should validate_presence_of :body }
+  it { should validate_presence_of :to }
+  it { should validate_presence_of :from }
+
+
 end

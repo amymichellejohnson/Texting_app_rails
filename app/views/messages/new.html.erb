@@ -1,19 +1,37 @@
 <% if @message.errors.any? %>
   <p> Something went awry: </p>
   <ul>
-    <% @message.errors.full_message.each  do |message| %>
+    <% @message.errors.full_messages.each  do |message| %>
       <li><%= message %></li>
     <% end %>
   </ul>
 <% end %>
 
+
+
 <h1> New Message </h1>
-<%= form_for @message do |f| %>
-  <%= f.label :to %>
-  <%= f.text_field :to %>
+  <%= form_for @message do |f| %>
+  <select name="message[to]" id="message_to">
+  <% @contacts.each do |contact| %>
+  <option value= "<%= contact.telephone %>"> <%= contact.name %> </option>
+  <% end %>
+  </select>
   <%= f.label :from %>
   <%= f.text_field :from %>
   <%= f.label :body %>
   <%= f.text_field :body %>
   <%= f.submit class: "btn btn-primary btn-sm" %>
+<% end %>
+
+
+<h1> New Group Message </h1>
+<%= form_for @message do |f| %>
+<% @contacts.each do |contact| %>
+<input type="checkbox" value="<%= contact.telephone %>" name="message[to]" id="message_to">
+<% end %>
+<%= f.label :from %>
+<%= f.text_field :from %>
+<%= f.label :body %>
+<%= f.text_field :body %>
+<%= f.submit class: "btn btn-primary btn-sm" %>
 <% end %>

@@ -49,9 +49,11 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
 
-  group :test do
-    gem 'vcr'
-    gem 'webmock'
-    gem 'pry'
-  end
+end
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
 end

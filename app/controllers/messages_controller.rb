@@ -6,9 +6,11 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @contacts = Contact.all
   end
 
   def create
+    @contacts = Contact.all
     @message = Message.new(message_params)
     if @message.save
       flash[:notice] = "Your message was sent!"
